@@ -14,7 +14,7 @@ const del = require("del");
 
 function browsersync() {
     browserSync.init({
-        proxy: "todo.loc/app",
+        proxy: "todo-list/app",
         notify: false,
         online: true,
         //tunnel: true
