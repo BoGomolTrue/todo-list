@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="styles/css/app.min.css">
+    <script src="scripts/app.min.js" defer></script>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-light">
+        <a class="navbar-brand">Todo List</a>
+        <form class="form-inline">
+            <div class="menu__button">
+                <span class="menu__button__login">Login</span>
+                <span class="menu__button__logout">Logout</span>
+                <span class="menu__button__main">Main</span>
+            </div>
+        </form>
+    </nav>
+</header>
+<main class="wrapper">
+    <div id="page0" class="page0">
+        <div class="container">
+            <div class="content">
+                <div class="row d-flex justify-content-center">
+                    <img src="https://i.gifer.com/OnFv.gif"/>
+                </div>
+            </div>
+        </div>
+    </div> <div id="page1" class="page1" style="display: none;">
+        <div class="container">
+            <div class="content">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6">
+                        <form class="auth-form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="email" class="form-control" name="email" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Password">
+                            </div>
+                            <div class="form-group__submit">
+                                <button type="submit"  class="btn btn-primary btn__auth">Login</button>
+                            </div>
+                            <div class="error">
+                                <span></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="page2" class="page2" style="display: none;">
+    <div class="container">
+        <div class="content">
+            <div class="container d-flex justify-content-center">
+                <div class="col col-11 mx-auto">
+                    <span class="error">Данная задача уже есть в списке.</span>
+                    <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                        <div class="col">
+                            <input class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded" type="text" placeholder="Add new ..">
+                        </div>
+                        <div class="col-auto px-0 mx-0 mr-2">
+                            <button type="checked" class="btn btn-primary add-new-task">Add</button>
+                        </div>
+                    </div>
+                    <br>
+                    Текущие дела
+                    <br>
+                    <br>
+                    <div class="todo-list">
+                   
+                    </div>
+                    <div class="row rounded shadow-sm p-2 align-items-center justify-content-center message-todo" style="display: none;">
+                        Список пуст
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+</body>
+</html>

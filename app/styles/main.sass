@@ -1,0 +1,42 @@
+@import "variables.sass"
+*
+  margin: 0
+  padding: 0
+  font-size: $font_size_prj
+body
+  background-color: RGBA(238, 238, 238, 1)
+.navbar
+  background: RGBA(171, 183, 183,1)
+.navbar-brand
+  cursor: pointer
+.menu
+  &__button
+    & span
+      font-size: 14pt
+      cursor: pointer
+      padding-right: 15px
+      &:hover
+        color: $color_active
+    &__main
+      display: none
+.wrapper
+  //height: 100vh
+  display: flex
+  flex-direction: column
+.content
+  padding: 25px 15px
+  margin-bottom: 25px
+  margin-top: 25px
+
+.form-group
+  &__submit
+    display: flex
+    justify-content: center
+
+.error
+  display: none
+  color: red
+  font-size: 14pt
+  font-weight: bold
+  text-align: center
+  padding-top: 15px
