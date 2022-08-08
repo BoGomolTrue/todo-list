@@ -2,8 +2,79 @@
     const debug = true
     let tasks = []
 
-    if(localStorage.tasks) {
-        tasks = JSON.parse(localStorage.getItem('tasks'))
+    const users = []
+
+    users.push(
+        {
+            email: 'admin@mail.ru',
+            password: '123123',
+            name: 'admin'
+        },
+        {
+            email: 'test1@mail.ru',
+            password: '123123',
+            name: 'test1'
+        },
+        {
+            email: 'test2@mail.ru',
+            password: '123123',
+            name: 'test2'
+        },
+        {
+            email: 'test3@mail.ru',
+            password: '123123',
+            name: 'test3'
+        },
+        {
+            email: 'test4@mail.ru',
+            password: '123123',
+            name: 'test4'
+        },
+        {
+            email: 'test5@mail.ru',
+            password: '123123',
+            name: 'test5'
+        },
+        {
+            email: 'test6@mail.ru',
+            password: '123123',
+            name: 'test6'
+        },
+        {
+            email: 'test7@mail.ru',
+            password: '123123',
+            name: 'test7'
+        },
+        {
+            email: 'test8@mail.ru',
+            password: '123123',
+            name: 'test8'
+        },
+        {
+            email: 'test9@mail.ru',
+            password: '123123',
+            name: 'test9'
+        },
+        {
+            email: 'test10@mail.ru',
+            password: '123123',
+            name: 'test10'
+        },
+        {
+            email: 'test11@mail.ru',
+            password: '123123',
+            name: 'test11'
+        }
+        ,{
+            email: 'test12@mail.ru',
+            password: '123123',
+            name: 'test12'
+        }
+    )
+
+
+    if((localStorage.getItem('tasks'+sessionStorage.pUserName))) {
+        tasks = JSON.parse(localStorage.getItem('tasks'+sessionStorage.pUserName))
     }
 
     /* CLICKS */
@@ -19,14 +90,20 @@
             }, 5000)
             return
         }
-
-        if(userEmail == 'admin@mail.ru' && userPassword == '123123') {
-            sessionStorage.pAuth = true
-            sessionStorage.removeItem('pLoginPage')
-            sessionStorage.pActive = 2
-            sessionStorage.pTodoPage = true
-            location.reload()
-        }else {
+        let error = false
+        users.forEach(element => {
+            if(element.email == userEmail && element.password == userPassword) {
+                sessionStorage.pAuth = true
+                sessionStorage.pUserName = element.name
+                sessionStorage.removeItem('pLoginPage')
+                sessionStorage.pActive = 2
+                sessionStorage.pTodoPage = true
+                location.reload()
+            }else {
+                error = true
+            }
+        });
+        if(error == true) {
             $('.error').html('Логин или пароль не найдены в системе')
             $('.error').fadeIn(100)
             setTimeout(() => {
@@ -37,11 +114,8 @@
     })
     $('body').on('click', '.menu__button__logout', function() {
         Object.entries(sessionStorage).forEach(([key]) => {
-            if(key !== 'pAuth') {
-                sessionStorage.removeItem(key)
-            }
+            sessionStorage.removeItem(key)
         })
-        sessionStorage.removeItem('pAuth')
         sessionStorage.pStartPage = true
         sessionStorage.pActive = 0
         location.reload()
@@ -49,7 +123,7 @@
     })
     $('body').on('click', '.add-new-task', function() {
         if($('.add-todo-input').val() == '') return
-        if(verifyDescription($('.add-todo-input').val())) {
+       if(verifyDescription($('.add-todo-input').val())) {
             $('.error').fadeIn(100)
             setTimeout(() => {
                 $('.error').fadeOut(0)
@@ -63,15 +137,15 @@
             $('.message-todo').fadeOut(0)
         }
         tasks.push(new Task ($('.add-todo-input').val()))
-        localStorage.setItem('tasks', JSON.stringify(tasks))
+        localStorage.setItem('tasks'+sessionStorage.pUserName, JSON.stringify(tasks))
         $('.add-todo-input').val('')
         getTaskList()
     })
     $('body').on('click', '.complete-task', function() {
         $('.todo-wrapper[data-id = "'+$(this).attr('data-id')+'"]').css('text-decoration', 'line-through')
         tasks.splice($(this).attr('data-id'), 1)
-        localStorage.removeItem('tasks')
-        localStorage.setItem('tasks', JSON.stringify(tasks))
+        localStorage.removeItem('tasks'+sessionStorage.pUserName)
+        localStorage.setItem('tasks'+sessionStorage.pUserName, JSON.stringify(tasks))
         setTimeout(() => {
             getTaskList()
             if(!tasks.length) {
@@ -136,6 +210,7 @@
 
     if (debug === true) {
         console.log(sessionStorage)
+        console.log(localStorage)
         console.log(JSON.stringify(tasks))
     }   
 })(jQuery);
