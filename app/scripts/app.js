@@ -2,7 +2,7 @@
     const debug = true
     let tasks = []
 
-    const users = []
+    let users = []
     let userHash = ''
 
     users.push(
@@ -224,7 +224,6 @@
         
     })
     $('body').on('click', '.reset-task', function() {
-        if(sessionStorage.pUserName != 'admin') return
         if(userHash != sessionStorage.pHash) {
             alert("Попытка взлома системы!");
             Object.entries(sessionStorage).forEach(([key]) => {
