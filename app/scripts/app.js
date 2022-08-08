@@ -69,12 +69,14 @@
         tasks.splice($(this).attr('data-id'), 1)
         localStorage.removeItem('tasks')
         localStorage.setItem('tasks', JSON.stringify(tasks))
-        getTaskList()
-        if(!tasks.length) {
-            $('.message-todo').html('Ура! Все сделано!')
-            $('.message-todo').css('font-size', '24px')
-            $('.message-todo').fadeIn(100)
-        }
+        setTimeout(() => {
+            getTaskList()
+            if(!tasks.length) {
+                $('.message-todo').html('Ура! Все сделано!')
+                $('.message-todo').css('font-size', '24px')
+                $('.message-todo').fadeIn(100)
+            }
+        }, 100);
 
         
     })
