@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="styles/css/app.min.css">
     <script src="scripts/app.min.js" defer></script>
@@ -24,7 +26,7 @@
         <div class="container">
             <div class="content">
                 <div class="row d-flex justify-content-center">
-                    <img src="https://i.gifer.com/OnFv.gif"/>
+                    <img src="https://i.gifer.com/OnFv.gif" width="80%"/>
                 </div>
             </div>
         </div>
@@ -73,7 +75,78 @@
                     <br>
                     <br>
                     <div class="task-list">
-                   
+                        <div data-id="`+index+`" class="row rounded shadow-sm p-2 todo-wrapper align-items-center justify-content-center">
+                            <div class="col">
+                                <input class="form-control form-control-lg border-0 rounded" disabled value="`+task.description+`" type="text">
+                            </div>
+                            <div class="col-auto px-0 mx-0 mr-2">
+                                <button data-id="`+index+`"  type="button" class="btn btn-success complete-task">✓</button>
+                            </div>
+                        </div> 
+                        <div data-id="`+index+`" class="row rounded shadow-sm p-2 todo-wrapper align-items-center justify-content-center">
+                            <div class="col">
+                                <input class="form-control form-control-lg border-0 rounded" disabled value="`+task.description+`" type="text">
+                            </div>
+                            <div class="col-auto px-0 mx-0 mr-2">
+                                <button data-id="`+index+`"  type="button" class="btn btn-success complete-task">✓</button>
+                            </div>
+                        </div> 
+                        <div data-id="`+index+`" class="row rounded shadow-sm p-2 todo-wrapper align-items-center justify-content-center">
+                            <div class="col">
+                                <input class="form-control form-control-lg border-0 rounded" disabled value="`+task.description+`" type="text">
+                            </div>
+                            <div class="col-auto px-0 mx-0 mr-2">
+                                <button data-id="`+index+`"  type="button" class="btn btn-success complete-task">✓</button>
+                            </div>
+                        </div> 
+                        <div data-id="`+index+`" class="row rounded shadow-sm p-2 todo-wrapper align-items-center justify-content-center">
+                            <div class="col">
+                                <input class="form-control form-control-lg border-0 rounded" disabled value="`+task.description+`" type="text">
+                            </div>
+                            <div class="col-auto px-0 mx-0 mr-2">
+                                <button data-id="`+index+`"  type="button" class="btn btn-success complete-task">✓</button>
+                            </div>
+                        </div> 
+                        <div data-id="`+index+`" class="row rounded shadow-sm p-2 todo-wrapper align-items-center justify-content-center">
+                            <div class="col">
+                                <input class="form-control form-control-lg border-0 rounded" disabled value="`+task.description+`" type="text">
+                            </div>
+                            <div class="col-auto px-0 mx-0 mr-2">
+                                <button data-id="`+index+`"  type="button" class="btn btn-success complete-task">✓</button>
+                            </div>
+                        </div> 
+                        <div data-id="`+index+`" class="row rounded shadow-sm p-2 todo-wrapper align-items-center justify-content-center">
+                            <div class="col">
+                                <input class="form-control form-control-lg border-0 rounded" disabled value="`+task.description+`" type="text">
+                            </div>
+                            <div class="col-auto px-0 mx-0 mr-2">
+                                <button data-id="`+index+`"  type="button" class="btn btn-success complete-task">✓</button>
+                            </div>
+                        </div> 
+                        <div data-id="`+index+`" class="row rounded shadow-sm p-2 todo-wrapper align-items-center justify-content-center">
+                            <div class="col">
+                                <input class="form-control form-control-lg border-0 rounded" disabled value="`+task.description+`" type="text">
+                            </div>
+                            <div class="col-auto px-0 mx-0 mr-2">
+                                <button data-id="`+index+`"  type="button" class="btn btn-success complete-task">✓</button>
+                            </div>
+                        </div> 
+                        <div data-id="`+index+`" class="row rounded shadow-sm p-2 todo-wrapper align-items-center justify-content-center">
+                            <div class="col">
+                                <input class="form-control form-control-lg border-0 rounded" disabled value="`+task.description+`" type="text">
+                            </div>
+                            <div class="col-auto px-0 mx-0 mr-2">
+                                <button data-id="`+index+`"  type="button" class="btn btn-success complete-task">✓</button>
+                            </div>
+                        </div> 
+                        <div data-id="`+index+`" class="row rounded shadow-sm p-2 todo-wrapper align-items-center justify-content-center">
+                            <div class="col">
+                                <input class="form-control form-control-lg border-0 rounded" disabled value="`+task.description+`" type="text">
+                            </div>
+                            <div class="col-auto px-0 mx-0 mr-2">
+                                <button data-id="`+index+`"  type="button" class="btn btn-success complete-task">✓</button>
+                            </div>
+                        </div> 
                     </div>
                     <div class="row rounded shadow-sm p-2 align-items-center justify-content-center message-todo" style="display: none;">
                         Список пуст

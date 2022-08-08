@@ -66,13 +66,10 @@
     })
     $('body').on('click', '.complete-task', function() {
         $('.todo-wrapper[data-id = "'+$(this).attr('data-id')+'"]').css('text-decoration', 'line-through')
-        tasks.splice($(this).attr('data-id'),1)
+        tasks.splice($(this).attr('data-id'), 1)
         localStorage.removeItem('tasks')
         localStorage.setItem('tasks', JSON.stringify(tasks))
-        setTimeout(() => {
-            $('.todo-wrapper[data-id = "'+$(this).attr('data-id')+'"]').remove()
-        }, 50);
-
+        getTaskList()
         if(!tasks.length) {
             $('.message-todo').html('Ура! Все сделано!')
             $('.message-todo').css('font-size', '24px')
