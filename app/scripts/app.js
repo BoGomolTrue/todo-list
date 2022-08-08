@@ -56,6 +56,9 @@
             }, 800);
             return
         }
+        if($('.task-list').is(':hidden')) {
+            $('.task-list').fadeIn(100)
+        }
         if(!$('.message-todo').is(':hidden')) {
             $('.message-todo').fadeOut(0)
         }
@@ -72,6 +75,7 @@
         setTimeout(() => {
             getTaskList()
             if(!tasks.length) {
+                $('.task-list').fadeOut(0)
                 $('.message-todo').html('Ура! Все сделано!')
                 $('.message-todo').css('font-size', '24px')
                 $('.message-todo').fadeIn(100)
@@ -125,6 +129,7 @@
     }
 
     if(!$('.task-list').children().length) {
+        $('.task-list').fadeOut(0)
         $('.message-todo').html('Список пуст')
         $('.message-todo').fadeIn(0)
     }
