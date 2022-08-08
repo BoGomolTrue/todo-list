@@ -103,7 +103,7 @@
         }
         if(tasks) {
             tasks.forEach((item, index) => {
-                $('.task-list').append(newTask(item, index))
+                $('.task-list').prepend(newTask(item, index))
             })
         }
     }
