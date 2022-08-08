@@ -98,12 +98,12 @@
         `
     }
     function getTaskList() {
-        if($('.todo-list').children().length) {
-            $('.todo-list').children().remove()
+        if($('.task-list').children().length) {
+            $('.task-list').children().remove()
         }
         if(tasks) {
             tasks.forEach((item, index) => {
-                $('.todo-list').append(newTask(item, index))
+                $('.task-list').append(newTask(item, index))
             })
         }
     }
@@ -125,7 +125,7 @@
         $('.menu__button__main').css('display', 'none')
     }
 
-    if(!$('.todo-list').children().length) {
+    if(!$('.task-list').children().length) {
         $('.message-todo').html('Список пуст')
         $('.message-todo').fadeIn(0)
     }
