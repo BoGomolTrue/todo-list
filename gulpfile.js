@@ -71,6 +71,7 @@ function buildcopy() {
     return src([
         "app/styles/css/app.min.css",
         "app/scripts/app.min.js",
+        "app/assets/*",
         "app/index.html",
     ], { base: "app" }).pipe(dest("dist"));
 }

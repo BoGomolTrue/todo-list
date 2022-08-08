@@ -169,12 +169,7 @@
         if($('.add-todo-input').val() == '') return
         if(userHash != sessionStorage.pHash) {
             alert("Попытка взлома системы!");
-            Object.entries(sessionStorage).forEach(([key]) => {
-                sessionStorage.removeItem(key)
-            })
-            sessionStorage.pStartPage = true
-            sessionStorage.pActive = 0
-            location.reload()
+            clearStorage()
             return
         }
        if(verifyDescription($('.add-todo-input').val())) {
@@ -199,12 +194,7 @@
     $('body').on('click', '.complete-task', function() {
         if(userHash != sessionStorage.pHash) {
             alert("Попытка взлома системы!");
-            Object.entries(sessionStorage).forEach(([key]) => {
-                sessionStorage.removeItem(key)
-            })
-            sessionStorage.pStartPage = true
-            sessionStorage.pActive = 0
-            location.reload()
+            clearStorage()
             return
         }
         $('.todo-wrapper[data-id = "'+$(this).attr('data-id')+'"]').css('text-decoration', 'line-through')
@@ -226,12 +216,7 @@
     $('body').on('click', '.reset-task', function() {
         if(userHash != sessionStorage.pHash) {
             alert("Попытка взлома системы!");
-            Object.entries(sessionStorage).forEach(([key]) => {
-                sessionStorage.removeItem(key)
-            })
-            sessionStorage.pStartPage = true
-            sessionStorage.pActive = 0
-            location.reload()
+            clearStorage()
             return
         }
         $('.error').html('Список задач был полностью очищен')
@@ -274,6 +259,14 @@
     function verifyDescription(description) {
         const found = tasks.some(item => item.description == description);
         if(found) return true
+    }
+    function clearStorage() {
+        Object.entries(sessionStorage).forEach(([key]) => {
+            sessionStorage.removeItem(key)
+        })
+        sessionStorage.pStartPage = true
+        sessionStorage.pActive = 0
+        location.reload()
     }
     function arrayRandElement(arr) {
         var rand = Math.floor(Math.random() * arr.length);
