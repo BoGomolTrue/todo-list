@@ -13,7 +13,7 @@
     function route(this_page, result_page) {
         let p = result_page
         Object.entries(sessionStorage).forEach(([key]) => {
-            if(key !== 'pAuth' && key !== 'pUserName' && key !== 'pHash') {
+            if(key !== 'pAuth' && key !== 'pUserName' && key !== 'pHash' && key !== 'pEmail' && key !== 'pPosition') {
                 sessionStorage.removeItem(key)
             }
         })
