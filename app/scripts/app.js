@@ -87,6 +87,7 @@
                 _Task: $('.add-todo-input').val()
             },
         }).done(function (response) {
+            console.log(response)
             if(response.trim() != 'Err') {
                 if($('.task-list').is(':hidden')) {
                     $('.task-list').fadeIn(100)
